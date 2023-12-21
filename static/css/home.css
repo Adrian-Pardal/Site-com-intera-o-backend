@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+}
+
+#form-fundo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+#form-frente{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fff;
+}
+
+.flash-alerta{
+    border-bottom: solid 2px #ff0000;
+    color: #ff0000;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+#alerta{
+    margin-left: 0.5rem;
+    color: #ff0000;
+}
+
+#login{
+    background: #2b2a2a;
+    width: 30rem;
+    height: 23rem;
+    border-radius: 20px;
+    color: #fff;
+}
+
+#login:hover{
+    box-shadow:  0 10px 15px 0  #ffffff;
+}
+
+form{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+#name{
+    width: 20rem;
+    height: 2.5rem;
+    outline: none;
+    background: #191818;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+ 
+}
+
+#name:hover{
+    background: #433f3f;
+    cursor: pointer;
+    color: #fff;
+}
+
+#password{
+    width: 20rem;
+    height: 2.5rem;
+    outline: none;
+    background: #191818;
+    border: 2px solid #FFF;
+    border-radius: 10px;
+    color: #fff;
+    padding: 10px;
+}
+#password:hover{
+    background: #433f3f;
+    cursor: pointer;
+    color: #fff;
+}
+.password i {
+    color:#fff
+}
+
+.name-div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fff;
+}
+
+.password-div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fff;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#btn-entrar{
+   
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+    border-radius: 4rem;
+    width: 8rem;
+    height: 2rem;
+    
+}

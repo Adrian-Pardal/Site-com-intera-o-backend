@@ -1,0 +1,17 @@
+@import url(../css/home.css);
+
+#mode{
+    width: 15rem;
+    margin-top: -8rem;
+    margin-bottom: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.titulo{
+    background:  linear-gradient(#0246ff , #00ff15);
+    background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+}
