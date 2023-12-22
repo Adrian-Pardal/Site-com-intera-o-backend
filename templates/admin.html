@@ -56,6 +56,31 @@
                     </form>
             </div>
        </div>
-      
+       <div id="form-fundo">
+            
+        <div id="form-frente">
+            <div id="mode">
+                <h2 class="titulo1">Registered Users</h2>
+            </div>
+            <div class="list-users">
+                {% if users%}
+                   {% for c in users%}
+                     <ul class="list">
+                        <li class="info-user1">
+                           Name User : {{ c['name'] }}
+                        </li>
+
+                        <li class="info-user2">
+                           Password : {{ c['password'] }}
+                        </li>
+                    
+                     </ul>
+                   {% endfor %}
+                {% else %}
+                    <h3>Não existe usuarios cadastrados!!</h3>
+                {% endif %}
+            </div>    
+        </div>
+   </div>
 </body>
 </html>

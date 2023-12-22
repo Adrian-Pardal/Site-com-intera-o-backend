@@ -18,7 +18,11 @@ def home():
 @app.route('/adm')
 def adm():
     if logado == True:
-        return render_template("admin.html")
+        with open('users.json') as usersTemp :
+            users = json.load(usersTemp)
+            
+
+        return render_template("admin.html" , users=users)
     
     if logado == False:
         return redirect('/')

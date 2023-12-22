@@ -15,3 +15,47 @@
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
+
+.titulo1{
+  background:  linear-gradient(#ffffff , #ffe100);
+  background-clip: text;
+-webkit-background-clip: text; 
+-webkit-text-fill-color: transparent;
+}
+
+.list-users{
+  background: #2b2a2a;
+  width: 35rem;
+  height: 31.5rem;
+
+
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  gap: 3rem;
+  overflow-y: scroll;
+
+  border-radius: 20px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+li{
+  padding-bottom: 2rem;
+}
+.list{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  
+  list-style: none;
+  gap:3rem
+}
+.info-user1{
+  font-size: 20px;
+
+  
+}
+.info-user2{
+  font-size: 20px;
+}
