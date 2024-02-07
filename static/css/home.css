@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: poppins;
+    font-family: "Poppins", sans-serif;
 }
 
 #form-fundo{
@@ -44,6 +44,8 @@
     height: 23rem;
     border-radius: 20px;
     color: #fff;
+
+    transition: 300ms;
 }
 
 #login:hover{

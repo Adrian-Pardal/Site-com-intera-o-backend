@@ -9,13 +9,16 @@
     align-items: center;
     justify-content: center;
 }
+/* titulo do admin*/
 .titulo{
     background:  linear-gradient(#0246ff , #00ff15);
     background-clip: text;
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
+   font-weight: 600;
 }
 
+/* titulo do Register User*/
 .titulo1{
   background:  linear-gradient(#ffffff , #ffe100);
   background-clip: text;
@@ -23,39 +26,200 @@
 -webkit-text-fill-color: transparent;
 }
 
+/* titulo do Save file*/
+.titulo2{
+  background:  linear-gradient(#00e1ff , #b5c3f7);
+  background-clip: text;
+-webkit-background-clip: text; 
+-webkit-text-fill-color: transparent;
+}
+
+/* fundo*/
+#form-fundo{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+/* influencia toda lista o tamanha espaço etc..*/
 .list-users{
   background: #2b2a2a;
-  width: 35rem;
-  height: 31.5rem;
-
+  width: 40rem;
+  height: 35rem;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
 
   padding-top: 1rem;
   padding-left: 2rem;
-  padding-right: 1rem;
-  gap: 3rem;
+  padding-right: 2rem;
+  gap: 1.8rem;
+
   overflow-y: scroll;
 
-  border-radius: 20px;
+  border-radius: 20px ;
+  border: 5px solid  #ffe100;
+
   color: #fff;
   text-align: center;
   text-decoration: none;
 }
+/* scroll do list users ficando invessivel*/
+.list-users::-webkit-scrollbar{
+  width: 0px;
+}
+
+/* Essa função meche com a lista do usuario porem desalinha os itens dentro se usar padding*/
 li{
-  padding-bottom: 2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
+
+/* Aqui ira modificar a 'ul' do FORM*/
 .list{
-  display: flex;
+  display:flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
   
-  list-style: none;
-  gap:3rem
+ 
+
+ gap: 3rem;
 }
+
+
+/* A primeira informação do user 'nome'*/
 .info-user1{
   font-size: 20px;
 
   
 }
+/* A segunda informação do user 'senha'*/
 .info-user2{
   font-size: 20px;
 }
+
+/* vai modificar a menssagem do flash*/
+.flash-alerta{
+  color: #00ff15;
+  border-bottom: solid 2px #00ff15;
+}
+/*icone de check fontsawesome*/
+#check{
+  margin-left: 1rem;
+  color: #00ff15;
+}
+/* modifica o button de delete*/
+.btn-delete{
+  width: 7rem;
+  padding: 0.2rem;
+
+  border: none;
+  border-radius: 5px;
+}
+
+/* icone de trash fontsawesome */
+#trash{
+  margin-left: 1rem;
+  color: red;
+}
+
+/* ira modificar o save files do form*/
+#fundo-save{
+  width: 35rem;
+  height: 25rem;
+
+  background: #2b2a2a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50px;
+}
+
+/* Todo modificação do Save files*/
+#fundo-save{
+  border: 5px solid #00e1ff;
+  display: flex;
+  flex-direction: column;
+
+  transition: 300ms;
+}
+#fundo-save:hover{
+
+  box-shadow:  0 5px 10px 10px  #00e1ff;
+  cursor: pointer;
+}
+
+.download-file{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-file header{
+  font-size: 27px;
+  font-weight: 600;
+  color: #00e1ff;
+}
+
+.uploaded form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+/* mechendo com o label */
+#document-input{
+  display: none;
+}
+
+#document-label{
+  width: 400px;
+  aspect-ratio: 6/3;
+  background: #00e1ff;
+
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  cursor: pointer;
+
+  border: 2px dashed #00084f;
+
+  transition: background 300ms ease-in-out;
+}
+#document-label:hover{
+  background: #ffffff;
+}
+
+#document-label:active{
+  color: #00ff15;
+  border: 3px dashed #00ff15;
+}
+
+/*
+.uploaded form input{
+  width: 400px;
+  aspect-ratio: 16/9;
+
+  border: 5px dashed  #00e1ff;
+
+  background: #00e1ff;
+}
+.uploaded form input:hover{
+  background: #59e4f7;
+}
+
