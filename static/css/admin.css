@@ -1,13 +1,31 @@
 @import url(../css/home.css);
 
 #mode{
-    width: 15rem;
+    width: 20rem;
     margin-top: -8rem;
     margin-bottom: 5rem;
+    
+    gap: 2rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#Change-Language{
+  width: 6.5rem;
+  height: 1.8rem;
+  background:  linear-gradient(#0246ff , #00ff15);
+  
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  outline: none;
+  
+  border-image:  linear-gradient(#0246ff , #00ff15) 25 ;
+
+  font-weight: 700;
+  text-align: center;
+  outline-color: #00ff15 ;
 }
 /* titulo do admin*/
 .titulo{
@@ -210,16 +228,21 @@ li{
   border: 3px dashed #00ff15;
 }
 
-/*
-.uploaded form input{
-  width: 400px;
-  aspect-ratio: 16/9;
+/* Button Send na opção send files*/
 
-  border: 5px dashed  #00e1ff;
+#send{
+  background: #ffffff;
+  
+  width: 10rem;
+  height: 2rem;
+  
+  border: solid 2px  #00084f;
+  border-radius: 15px;
 
+  font-weight: 600;
+  font-size: 15px
+}
+
+#send:hover{
   background: #00e1ff;
 }
-.uploaded form input:hover{
-  background: #59e4f7;
-}
-

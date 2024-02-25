@@ -1,5 +1,5 @@
 
-from flask import Flask , render_template, redirect, request, flash
+from flask import Flask , render_template, redirect, request, flash,send_from_directory
 
 # o arquivo json pode ser usando para armazenar informações
 import json
@@ -11,11 +11,13 @@ import os # biblioteca usada para diretorios
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SOBER'
+
 #usamos essa configuração inicial para abrir o flask no python e criamos e backend dentro .
 logado = False
 
 @app.route('/') 
 def home():
+    # So vai entrar na pagina do usuario ou do Adm se a variavel logado for true
     global logado
     logado = False
     
@@ -23,7 +25,7 @@ def home():
 
 
 @app.route('/adm')
-def adm():
+def adm(): # rota para pagina ADM on o administrador tem acesso a praticamente todas as opções
     if logado == True:
         with open('users.json') as usersTemp :
             users = json.load(usersTemp)
@@ -33,10 +35,22 @@ def adm():
     
     if logado == False:
         return redirect('/')
-
+@app.route('/users')
+def users():
+ # Para o usuario a acessar
+    if logado == True:
+        file = []
+ # Se for true o logado vai redirecionar para pagina do usuario 
+        # Para cada documento em usando a biblioteca 'OS' para diretorios
+        for document in os.listdir('files'):
+            file.append(document)
+        return render_template("username.html", files=file) 
+    else:
+     # Se não volta para pagina inicial
+     return redirect('/')
 
 @app.route('/login' , methods=['POST'])
-def login():
+def login(): # rota para o usuario fazer o login e o Adm acessar pagina adm.
     global logado
 
     name = request.form.get('name')
@@ -52,14 +66,15 @@ def login():
                 return redirect('/adm')
             
             if user['name'] == name and user['password'] == password:
-                return render_template("username.html") 
+                logado = True
+                return redirect('/users')
                
             if cont >= len(users):
                 flash('usuario invalido !!')
                 return redirect('/')
 
 @app.route('/registerUser' , methods=['POST'])
-def registerUser():
+def registerUser(): #rota para register user para os usuarios conseguir fazer login.
     global logado
     user = []
     name = request.form.get('name')
@@ -83,7 +98,7 @@ def registerUser():
     return redirect('/adm')
 
 @app.route('/deleteUser' , methods=['POST'])
-def deleteUser():
+def deleteUser(): #rota para que o ADM delete os users.
     global logado
     logado = True
     user = request.form.get('UserPaDelete')
@@ -113,7 +128,7 @@ def deleteUser():
 
 
 @app.route('/upload' , methods=['POST'])
-def upload():
+def upload(): # rota para upload de arquivos feitos pelo ADM.
     global logado
     logado = True
     
@@ -127,8 +142,12 @@ def upload():
     flash('Saved File')
     return redirect('/adm')
 
+@app.route('/download' , methods=['POST'])
+def download(): # Rota para dowload de arquivos.
+    #Crie um variavel para chamar o select dentro do form para saber o nome do arquivo quer quer baixar
+    Name_Files = request.form.get('files_download')
 
-
+    return send_from_directory('files', Name_Files , as_attachment=True)
 
 
 
